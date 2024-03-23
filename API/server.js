@@ -1,6 +1,6 @@
 
 const app = require('./app')
-require('dotenv').config({})
+
 const port = process.env.PORT || 3030;
 const _sequelize = require('./config/Database')
 const relationAssociation = require('./utils/associations')

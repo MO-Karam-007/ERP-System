@@ -1,3 +1,4 @@
+require('dotenv').config()
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -7,7 +8,6 @@ var indexRouter = require('./routes/index');
 var MyApiError = require('./utils/ApiErrorHandler')
 var app = express();
 var { errorHandeler } = require('./utils/HandleResponse')
-
 
 
 
@@ -23,6 +23,7 @@ if (process.env.NODE_ENV === "development")
     console.log(`Mode : ${process.env.NODE_ENV}`);
 }
 app.use('/hr', indexRouter)
+
 // app.use(handleResponse)
 
 app.all('*', (req, res, next) =>

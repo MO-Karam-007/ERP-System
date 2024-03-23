@@ -10,6 +10,7 @@ router.route('/')
     .post(checkBody('email', 'first_name', 'last_name', 'employment_start_date')
         , employeeService.createEmployee)
 
+
 // .delete(employeeService.);
 router.route('/:id')
     .get(employeeService.findEmployee)

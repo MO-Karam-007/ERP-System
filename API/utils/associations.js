@@ -8,11 +8,11 @@ function relationAssociation()
 {
     Department.hasMany(Training)
     Training.belongsTo(Department)
-    Team.hasMany(Employee, { foreignKey: 'TeamId' })
-    Employee.belongsTo(Team)
+    // // Team.hasMany(Employee, { foreignKey: 'TeamId' })
+    // // Employee.belongsTo(Team)
 
-    Department.hasMany(Team)
-    Team.belongsTo(Department)
+    // Department.hasMany(Team)
+    // Team.belongsTo(Department)
 
     Report.belongsTo(Employee)
     Employee.hasMany(Report)

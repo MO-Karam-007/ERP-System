@@ -22,7 +22,7 @@ exports.errorHandeler = (err, req, res, next) =>
     console.log(`LOL in error response `);
     err.statusCode = err.statusCode || 500
     err.status = err.status || 'error'
-
+    console.log(`process.env.NODE_ENV`, process.env.NODE_ENV);
     if (process.env.NODE_ENV == "development")
     {
         res.status(err.statusCode).json({
@@ -33,11 +33,13 @@ exports.errorHandeler = (err, req, res, next) =>
         })
     } else
     {
+
         res.status(err.statusCode).json({
             status: err.status,
             statusCode: err.statusCode,
             message: err.message,
         })
     }
+
 
 }
