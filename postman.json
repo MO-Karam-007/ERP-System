@@ -1,0 +1,724 @@
+{
+	"info": {
+		"_postman_id": "ad675a94-1e7d-498d-a305-870c925ae6dc",
+		"name": "Human resources",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19040062",
+		"_collection_link": "https://blue-sunset-564338.postman.co/workspace/New-Team-Workspace~e4b1667b-1b45-4bc9-8660-a23a07aeaf6d/collection/19040062-ad675a94-1e7d-498d-a305-870c925ae6dc?action=share&source=collection_link&creator=19040062"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"mk@gmail.com\",\r\n\"user_type\":\"employee\",\r\n\"address\":\"egypt\",\r\n\"password\":\"mkmkmkmk\",\r\n\"name\":\"mohamed\",\r\n\"phone\":\"1152229569\",\r\n\"username\":\"first_name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"mk@gmail.com\",\r\n\"password\":\"kmkmkmk\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All employees",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"mk@gmail.com\",\r\n\"password\":\"kmkmkmk\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/employees?limit=4&user_type=Admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"employees"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "4"
+								},
+								{
+									"key": "user_type",
+									"value": "Admin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"mk@gmail.com\",\r\n\"password\":\"kmkmkmk\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/employees/241e2f0a-d867-41-",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"employees",
+								"241e2f0a-d867-41-"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"mk@gmail.com\",\r\n\"password\":\"kmkmkmk\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/employees/241e2f0a-d867-41-",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"employees",
+								"241e2f0a-d867-41-"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vacation",
+			"item": [
+				{
+					"name": "Vacation",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"mk@gmail.com\",\r\n\"password\":\"kmkmkmk\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vacation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"employee_id\":\"cfb9f726-3b29-473d-9461-4afa944f4eeb\",\r\n\"from_date\":\"2023-10-13\",\r\n\"to_date\":\"2023-10-15\",\r\n\"vacation_type\":\"Unpaid\",\r\n\"subject\":\"i feel lazy a little bit\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations?type=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vacation Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"employee_id\":\"c4ce8eca-2e77-413c-9004-97a607fac92d\",\r\n\"from_date\":\"\",\r\n\"to_date\":\"\",\r\n\"vacation_type\":\"\",\r\n\"subject\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations?type=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vacation",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"subject\": \"LOLLOLOSL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations/c5f01bb1-a82e-47db-bc5a-6c07b6a58196",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations",
+								"c5f01bb1-a82e-47db-bc5a-6c07b6a58196"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Training",
+			"item": [
+				{
+					"name": "Training",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"mk@gmail.com\",\r\n\"password\":\"kmkmkmk\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Training",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"employee_id\":\"cfb9f726-3b29-473d-9461-4afa944f4eeb\",\r\n\"name\":\"Summar programming\",\r\n\"date\":\"12-7-2023\",\r\n\"subject\":\"To enhance your chance to be backend developer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations?type=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Training",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"employee_id\":\"c4ce8eca-2e77-413c-9004-97a607fac92d\",\r\n\"from_date\":\"\",\r\n\"to_date\":\"\",\r\n\"vacation_type\":\"\",\r\n\"subject\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations?type=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Training",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"subject\": \"LOLLOLOSL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations/c5f01bb1-a82e-47db-bc5a-6c07b6a58196",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations",
+								"c5f01bb1-a82e-47db-bc5a-6c07b6a58196"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "Department",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"mk@gmail.com\",\r\n\"password\":\"kmkmkmk\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/departments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Training",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"employee_id\":\"cfb9f726-3b29-473d-9461-4afa944f4eeb\",\r\n\"name\":\"Summar programming\",\r\n\"date\":\"12-7-2023\",\r\n\"subject\":\"To enhance your chance to be backend developer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations?type=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Training",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"employee_id\":\"c4ce8eca-2e77-413c-9004-97a607fac92d\",\r\n\"from_date\":\"\",\r\n\"to_date\":\"\",\r\n\"vacation_type\":\"\",\r\n\"subject\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations?type=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Training",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"subject\": \"LOLLOLOSL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations/c5f01bb1-a82e-47db-bc5a-6c07b6a58196",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations",
+								"c5f01bb1-a82e-47db-bc5a-6c07b6a58196"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "attendance",
+			"item": [
+				{
+					"name": "attendance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"mk@gmail.com\",\r\n\"password\":\"kmkmkmk\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/departments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "attendance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"employee_id\":\"cfb9f726-3b29-473d-9461-4afa944f4eeb\",\r\n\"name\":\"Summar programming\",\r\n\"date\":\"12-7-2023\",\r\n\"subject\":\"To enhance your chance to be backend developer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations?type=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "attendance",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"employee_id\":\"c4ce8eca-2e77-413c-9004-97a607fac92d\",\r\n\"from_date\":\"\",\r\n\"to_date\":\"\",\r\n\"vacation_type\":\"\",\r\n\"subject\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations?type=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "attendance",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"subject\": \"LOLLOLOSL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3031/v1/vacations/c5f01bb1-a82e-47db-bc5a-6c07b6a58196",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3031",
+							"path": [
+								"v1",
+								"vacations",
+								"c5f01bb1-a82e-47db-bc5a-6c07b6a58196"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

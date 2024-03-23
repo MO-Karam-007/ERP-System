@@ -1,0 +1,17 @@
+{
+  "name": "hr_sysem",
+  "version": "1.0.0",
+  "description": "**Introduction**",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-client && npm run install-server",
+    "server:dev": "npm run start:dev --prefix server",
+    "server": "npm run start:prod --prefix server",
+    "server:client": "npm start --prefix server",
+    "client": "npm start --prefix client"
+  },
+  "author": "",
+  "license": "ISC"
+}
