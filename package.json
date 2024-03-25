@@ -4,6 +4,7 @@
   "description": "**Introduction**",
   "main": "index.js",
   "scripts": {
+    "start":"npm run start --prefix API",
     "install-server": "npm install --prefix server",
     "install-client": "npm install --prefix client",
     "install": "npm run install-client && npm run install-server",
