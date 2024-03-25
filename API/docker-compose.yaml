@@ -1,0 +1,15 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    restart: unless-stopped
+    env_file: ./.env
+    environment: 
+      POSTGRES_PASSWORD: mkmk
+      POSTGRES_USER: postgres
+      POSTGRES_DB: hr_test
+    ports:
+      - 13000:3030 
+
+
+ 
