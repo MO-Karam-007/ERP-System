@@ -9,7 +9,7 @@ const relationAssociation = require('./utils/associations')
 relationAssociation();
 
 _sequelize.sync({
-
+  force: true
 })
 
   .then(() =>
