@@ -5,6 +5,7 @@ const trainingRoute = require('./Trainings/training.route');
 const employeeRoute = require('./Employees/employee.route')
 const teamRoute = require('./teams/team.route')
 const reportRoute = require('./Reports/reports.route')
+const positionRoute = require('./Position/position.route')
 const { verfiyToken } = require('../middlewares/OAuth');
 /* GET home page. */
 
@@ -13,6 +14,7 @@ app.use('/trainings', trainingRoute)
 app.use('/employee', employeeRoute)
 app.use('/teams', teamRoute)
 app.use('/reports', reportRoute)
+app.use('/position', positionRoute)
 
 
 

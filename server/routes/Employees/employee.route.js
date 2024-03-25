@@ -7,7 +7,7 @@ const employeeService = require('../../Controller/employees.Controller')
 
 router.route('/')
     .get(employeeService.findAllEmployees)
-    .post(checkBody('email', 'first_name', 'last_name', 'employment_start_date')
+    .post(checkBody('email', 'first_name', 'last_name')
         , employeeService.createEmployee)
 
 

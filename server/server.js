@@ -6,13 +6,11 @@ const _sequelize = require('./config/Database')
 
 const relationAssociation = require('./utils/associations')
 
-
-console.log(`FFFFFFFFFFfff`);
-console.log(typeof []);
-
 relationAssociation();
 
-_sequelize.sync()
+_sequelize.sync({
+
+})
 
   .then(() =>
   {

@@ -1,114 +1,99 @@
 const { v4: uuidv4 } = require("uuid")
 const _sequelize = require("../config/Database");
 const { DataTypes } = require("sequelize")
+const Sequelize = require('sequelize')
+
+
 
 const Employee = _sequelize.define("Employee", {
     email: {
         type: DataTypes.STRING,
-        required: true,
+        allowNull: false,
         unique: true
     },
     first_name: {
         type: DataTypes.STRING,
-        required: true
+        allowNull: false
     },
     last_name: {
         type: DataTypes.STRING,
-        required: true
+        allowNull: false
     },
     middle_name: {
         type: DataTypes.STRING
-        , default: ''
     },
     display_name: {
         type: DataTypes.STRING,
-        required: true,
+        allowNull: false,
         unique: true
     },
     picture_url: {
-        type: DataTypes.STRING
-        , default: ''
-
+        type: DataTypes.STRING,
+        defaultValue: "https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_1280.png"
     },
     salutation: {
-        // SalutionTable
-        type: DataTypes.ENUM(["Mr", "Mrs", "Miss", "Ms"])
-        , default: "Mr"
-
+        type: DataTypes.ENUM(["Mr.", "Mrs.", "Miss.", "Ms."])
+        , defaultValue: "Mr."
     },
     marital_status: {
-        type: DataTypes.ENUM("Married", "Single")
-        , default: "Single"
-
+        type: DataTypes.ENUM("Married", "Single"),
     },
-
     employment_start_date: {
         type: DataTypes.DATEONLY,
-        required: true
+        allowNull: false,
+        defaultValue: Sequelize.literal('CURRENT_DATE'),
     },
     Hire_Date: {
         type: DataTypes.STRING
-        , default: '2023-10-10'
-
     },
     employment_end_date: {
         type: DataTypes.DATEONLY
-        , default: '2023-10-10'
-
     },
     birthday: {
         type: DataTypes.DATEONLY
-        , default: '2023-10-10'
-
     },
-    // team: {
-    //     type: DataTypes.STRING
+    // team_id: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: false,
     // },
     leaving_reason: {
-        type: DataTypes.DATEONLY
-        , default: ''
-
+        type: DataTypes.STRING
     },
     employee_code: {
         type: DataTypes.STRING,
         unique: true,
-        required: true
+        allowNull: false
     },
     gender: {
         type: DataTypes.ENUM({ values: ["Male", "Female"] })
-        , default: "Male"
-
     },
-    // employment_status: {
-    //     type: DataTypes.ENUM({
-    //         values: ["Contract", "Full-Time", "Intern", "Temporary", "Unemployed", "Volunteer"]
-    //     }),
-    //     default: "Contract"
-
-    // },
+    employment_status: {
+        type: DataTypes.ENUM({
+            values: ["Contract", "Full-Time", "Intern", "Temporary", "Unemployed", "Volunteer"]
+        }),
+        defaultValue: "Contract"
+    }
+    ,
     National_ID: {
-        type: DataTypes.INTEGER
-        , default: 0
-
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        unique: true
     },
     deceased_on: {
         type: DataTypes.DATEONLY
-        , default: ''
-
     },
     description: {
         type: DataTypes.STRING
-        , default: ''
-
     },
     works_remote: {
         type: DataTypes.BOOLEAN
-        , default: false
+        , defaultValue: false
 
     },
     active: {
         type: DataTypes.BOOLEAN,
-        default: true
+        defaultValue: true,
+        allowNull: false
     }
 
 })

@@ -16,7 +16,6 @@ exports.find = (Model, includeActiveFilter = false) =>
         //Filtering 
         // includeActiveFilter To retrieve all actives and specified for Employees 
         const filters = apiFeatures.filterApiFeature(includeActiveFilter)
-        console.log(`Invoking filter method : `, filters);
 
         // Sorting query
         const sorting = apiFeatures.apiSortingFeature()
